@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RatioBasedViewChange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnh-DS-dXX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="537.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egh-KR-8A1" userLabel="PlayerView">
+                                        <rect key="frame" x="157" y="219" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="QNO-ef-5cm"/>
+                                            <constraint firstAttribute="width" constant="100" id="shL-Qk-oub"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="egh-KR-8A1" firstAttribute="centerY" secondItem="pnh-DS-dXX" secondAttribute="centerY" id="IGj-vx-9bS"/>
+                                    <constraint firstItem="egh-KR-8A1" firstAttribute="centerX" secondItem="pnh-DS-dXX" secondAttribute="centerX" id="e6a-TC-dMv"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1xd-S1-yRu">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufY-DL-IVF">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="3:4"/>
+                                        <connections>
+                                            <action selector="ratioChangedButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8V-cq-2Vs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vF-w9-Kd4">
+                                        <rect key="frame" x="212" y="0.0" width="202" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="9:16"/>
+                                        <connections>
+                                            <action selector="ratioChangedButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYJ-O7-ft0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ilf-4R-uEh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1xd-S1-yRu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4bP-Zg-bzj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pnh-DS-dXX" secondAttribute="trailing" id="4fY-3V-9Tc"/>
+                            <constraint firstItem="1xd-S1-yRu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Pd-8O-iHo"/>
+                            <constraint firstItem="pnh-DS-dXX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="LrQ-S8-rLS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xd-S1-yRu" secondAttribute="trailing" id="STu-hI-2G4"/>
+                            <constraint firstItem="pnh-DS-dXX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZgD-Zf-oky"/>
+                            <constraint firstItem="pnh-DS-dXX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sXV-of-Fqd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="egh-KR-8A1" id="9Xx-ir-X1X"/>
+                        <outlet property="playerViewHeightConstraint" destination="QNO-ef-5cm" id="Kcz-Ob-sPI"/>
+                        <outlet property="playerViewWidthConstraint" destination="shL-Qk-oub" id="JBV-8w-xTv"/>
+                        <outlet property="topView" destination="pnh-DS-dXX" id="LRY-Sj-uz7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
